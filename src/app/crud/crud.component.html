@@ -1,0 +1,41 @@
+
+<div class="row">
+    <div class="col-md-9">
+        <div style="margin-left: 55px; width: 350px;">
+            <div class="form-group">
+            <label for="formGroupExampleInput">Name : </label>
+            <input type="text" [(ngModel)] = "name" class="form-control" id="formGroupExampleInput" placeholder="Name">
+            </div>
+            <div class="form-group">
+            <label for="formGroupExampleInput2">Enrollment : </label>
+            <input type="text" [(ngModel)] = "enr" class="form-control" id="formGroupExampleInput2" placeholder="Enrollment">
+            </div>
+            <button type="button" class="btn btn-success mb-2" (click) = "insertStudent()" *ngIf="selected===null">Add Details</button>
+            <button type="button" class="btn btn-success mb-2" (click) = "editStudent()" *ngIf="selected!==null">Edit Details</button>
+        </div> 
+    </div>
+    <div class="col-md-3">
+        <table class="table table-hower" style="width: 500px;">
+            <thead>
+                <tr>
+                    <th scope="col">Sr no.</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Enrollment</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let name of studentList; let i = index">
+                    <th scope="row"> {{ i+1 }} </th>
+                    <td> {{ name.studentname }} </td>
+                    <td> {{ name.enrollment }} </td>
+                    <td> <input type="button" (click)="selectStudent(i)" class="btn btn-warning" value="Edit"> </td>
+                    <td> <input type="button" (click)="deleteStudent(i)" class="btn btn-danger" value="Delete"> </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+  
+  

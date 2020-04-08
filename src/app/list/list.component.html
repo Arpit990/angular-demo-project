@@ -1,0 +1,15 @@
+
+<div class="form-group" style="margin-left: 25px;">
+    <input type="text" class="form-control" [(ngModel)]="temp" (input)="checkEmpty()" >
+    <br>
+    <button type="submit" class="btn btn-info" [disabled] = "isDisable" (click)="addStudent()" >Submit</button>
+</div>
+  
+<div class="row" style="margin-left: 15px;">
+    <div class="col-md-6">
+        <div class="card" style="width: 18rem;">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let student of studentList" > {{ student }} </li>
+          </ul>
+      </div>
+  </div>

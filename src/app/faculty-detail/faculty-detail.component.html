@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{ facu.FacultyImage }}">
+            <div class="card-body">
+              <h4> {{ facu.FacultyName }} </h4>
+              <h6> {{ facu.FacultyDesignation }} </h6>
+              <h5> {{ facu.FacultyHighestEducation }} </h5>
+              <h5> {{ facu.FacultyMobileNumber }} </h5>
+              <h5> {{ facu.FacultyEmailAddress }} </h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="jumbotron">
+            <h3 class="display-4"> Profile </h3>
+            <p class="lead"> {{ facu.FacultyProfileDescription }} </p>
+            <hr class="my-4">
+            <table class="table">
+                <tr>
+                    <th>
+                        Area of Specialization
+                    </th>
+                    <td></td>
+                    <td>
+                        {{ facu.FacultyAreaSpecialization }}
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Subjects Taught
+                    </th>
+                    <td></td>
+                    <td>
+                        {{ facu.FacultySubjectsTaught }}
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Seating
+                    </th>
+                    <td></td>
+                    <td>
+                        {{ facu.FacultySeating }}
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <button class="btn btn-primary" routerLink="../../faculty"> Back </button>
+        <button class="btn btn-danger" (click) = "deleterFaculty()" > Delete </button>
+    </div>
+</div>
